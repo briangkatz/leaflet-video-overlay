@@ -3,23 +3,23 @@
 #### [Demo](https://briangkatz.github.io/leaflet-video-overlay)
 
 ``` javascript
-# Set the bounds of the map where you want the video to display
+// Set the bounds of the map where you want the video to display
 var videoBounds = L.latLngBounds([[ 50, -170], [ 30, -130]]);
 
-# Create a rectangle overlay at the bounds you set
+// Create a rectangle overlay at the bounds you set
 L.rectangle(videoBounds).addTo(mymap);
 
-# Link your video
+// Link your video
 var videoUrls = [
     'video/airplane.mp4'
 ];
 
-# Create the overlay to show your video at the bounds you set
+// Create the overlay to show your video at the bounds you set
 var videoOverlay = L.videoOverlay( videoUrls, bounds, {
     opacity: 1
 }).addTo(mymap);
 
-# Add the video overlay to the map with pause and play buttons
+// Add the video overlay to the map with pause and play buttons
 videoOverlay.on('load', function () {
     var MyPauseControl = L.Control.extend({
         onAdd: function() {
